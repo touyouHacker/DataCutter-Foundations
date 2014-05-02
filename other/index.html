@@ -1,0 +1,213 @@
+<html>
+<META http-equiv="Content-Type" content="text/html;CHARSET=SHIFT_JIS">
+	<head>
+		<title>DataCutter Foundations</title>
+<style type="text/css">
+<!--
+A:active{color :red}
+A {text-decoration:none;}
+A:visited {color:gray}
+
+body{
+background-color: #ffffff;
+
+margin-left: 50px;
+
+scrollbar-3d-light-color: white;
+scrollbar-arrow-color: white;
+scrollbar-dark-base-shadow-color: white;
+scrollbar-face-color: black;
+scrollbar-highlight-color: black;
+scrollbar-shadow-color: white;
+}
+
+img.left{
+float:left;
+margin-right: 20px;
+}
+-->
+</style>
+
+
+	</head>
+	<body
+style="
+background-color:black;
+font-family:'メイリオ','Meiryo';
+"
+text="white" 
+link="#9da9ff"
+>
+<h1>DataCutter Foundations</h1>
+<a href="./htmlfile/dcf100_001.png" target=blank><img src="./htmlfile/dcf100_001.png"></a> 
+<br><br>
+<a href="./htmlfile/dcf100_002.png" target=blank><img src="./htmlfile/dcf100_002.jpg"></a> 
+<a href="./htmlfile/dcf100_003.png" target=blank><img src="./htmlfile/dcf100_003.jpg"></a>
+<a href="./htmlfile/dcf100_004.png" target=blank><img src="./htmlfile/dcf100_004.jpg"></a> 
+<a href="./htmlfile/dcf100_005_.png" target=blank><img src="./htmlfile/dcf100_005_.jpg"></a>  
+<br><br>
+<hr />
+<font color="#ceff5f">
+作者：ω11<br />
+ メール: <a href="mailto:omega11vec@gmail.com"> mailto:omega11vec@gmail.com</a><br />
+ はてな: <a href="http://d.hatena.ne.jp/thk/"  target=blank">http://d.hatena.ne.jp/thk/ </a><br />
+ ライセンス:GPL<br />
+ <br />
+ </font>
+
+ (Build20090103)<br>
+Version1.1.0 <a href="DatacutterV110bin.zip" target=blank>ダウンロード(280KB)</a> <font color="red"> ←最新版</font> <br />
+Version1.1.0 ソースコード <a href="DatacutterV110src.zip" target=blank>ダウンロード()</a>　(プラグインインターフェース含む)<br>
+<br />
+	
+<pre>
+〇用途
+バイナリファイルのデータから PNG/OGG/WMV/WAV(RIFF)/AVI(RIFF)/+α を抽出するツールです。
+
+抽出拡張子フォーマットは単純カットであればユーザー拡張が可能です。
+プラグイン拡張も可能ですがインターフェースは変更される可能性があります。
+oggはファイル終端が不明なのでゴミバイナリがつきます。WMVは今のとこ簡易分割なのでゴミバイナリがつきます。
+それをexplorer.exeが無理に解釈してメモリを1G以上よんでお亡くなりになったりする
+ことがあるのでそういうファイルは削除してください。
+ゴミヘッダ付きoggはwinampで再生するとエラーがでます。
+ゴミヘッダがついてもとりあえずバイナリの中の画像を閲覧したり動画がとりあえずみたい人にお薦めです。
+</pre>
+<b><font color="red">〇動作条件</font></b><br />
+動作には<font color="red">.NET Framework Version 2.0</font>が必要です。インストールしてください。<br />
+動作は.NET2.0の動くOS （※）であれば動作すると思いますが保証はできません。<br />
+.NETの最新版は3.5です。.NET2.0の下位互換を保ち最新版の2.0になっているので3.5を入れた方が無難でしょう。<br />
+ただし.NET3.5はXP以降のOSしか入れられません<br />
+<pre>
+※
+ Windows 2000 Service Pack 3以降; 
+ Windows 98; 
+ Windows 98 Second Edition; 
+ Windows ME; 
+ Windows Server 2003; 
+ Windows XP Service Pack 2以降
+ Windows Vista
+</pre>
+Microsoft .NET Framework Version 2.0<br />
+<A href="http://www.microsoft.com/downloads/details.aspx?familyid=0856EACB-4362-4B0D-8EDD-AAB15C5E04F5&displaylang=ja" target=_blank> http://www.microsoft.com/downloads/details.aspx?familyid=0856EACB-4362-4B0D-8EDD-AAB15C5E04F5&displaylang=ja</A><br />
+Microsoft .NET Framework 3.5<br />
+<A href="http://www.microsoft.com/downloads/details.aspx?FamilyID=333325FD-AE52-4E35-B531-508D977D32A6&displaylang=ja" target=_blank>http://www.microsoft.com/downloads/details.aspx?FamilyID=333325FD-AE52-4E35-B531-508D977D32A6&displaylang=ja</A><br />
+
+
+
+<font color="yellow">
+<b>ソースコードから簡単にビルドする方法</b> <br />
+<a href="http://www.atmarkit.co.jp/fdotnet/special/msbuild01/msbuild01_02.html" target=_blank>参考 [@IT]</a>
+DCFGSRC\DataCutter.sln を　C:\Windows\Microsoft.NET\Framework\v2.0.50727　にある　MSBuild.exe にドラッグすればデバッグ版は生成できます。<br />
+</font>
+<br />
+
+<pre>
+-----------------------------------------------
+〇更新履歴
+[090103 Ver1.1.0]
+プラグイン拡張に対応
+CrossDaysのPNG/WMV抽出にプラグインで対応
+
+[090102 Ver1.0.1]
+endタグのバグを修正
+
+[090101 Ver1.0.0]
+ユーザーが拡張子抽出設定をできるようにした
+　サンプルとしてMPEG1/JPEGに対応（簡易版）
+　
+コマンドライン引数起動に対応(Sendtoに対応できるように)
+ファイルをウィンドウにドラッグできるように対応
+
+[050112 Ver0.0.2]
+　RIFF/WAVに対応
+　RIFF/AVIに対応
+　.NETスタックウィンドウ廃止
+　キーボードショートカットの実装
+　メニューの追加
+　XPテーマ適用のマニュフェスト付属
+　連番ファイルの桁数を選べるようにした（1から8桁まで）
+　最初に作られるゴミファイルを暫定的に削除するようにした
+　出力フォルダのExistsチェック
+　
+[050104 Ver0.01]
+　ファーストリリース
+------------------------------------------------
+〇作者の開発環境
+Windows Vista SP1
+Visual Studio 2005 Pro
+.NET3.5
+
+</pre>
+　<font face="Segoe Script">
+<b> <font color="green" >OLD</font></b><br />
+ (Build20090101)<br>
+Version1.0.1 <a href="DatacutterV101bin.zip" target=blank>ダウンロード(271KB)</a><br />
+Version1.0.0 ソースコード <a href="DatacutterV100src.zip" target=blank>ダウンロード(46KB)</a><br>
+<br>
+(Build20050112)<br>
+Version0.0.2 <a href="DatacutterV002bin.zip" target=blank>ダウンロード(21KB)</a><br>
+Version0.0.2 ソースコード <a href="DatacutterV002src.zip" target=blank>ダウンロード(27KB)</a><br>
+<br>
+
+(Build20050104)<br>
+Version0.0.1<a href="Datcutters.lzh" target=blank> ダウンロード(44KB)</a><br>
+<br /><br />
+</font>
+
+〇バイナリ動作確認プレイヤ<br>
+Media Player Classic <br>
+<a href="http://sourceforge.net/project/showfiles.php?group_id=82303&package_id=84358" target=blank>http://sourceforge.net/project/showfiles.php?group_id=82303&package_id=84358</a><br>
+<br>
+〇画像表示確認ソフト<br>
+Vix<br>
+<a href="http://homepage1.nifty.com/k_okada/" target=blank>http://homepage1.nifty.com/k_okada/</a><br>
+Susie<br>
+<a href="http://www.digitalpad.co.jp/~takechin/" target=blank>http://www.digitalpad.co.jp/~takechin/</a><br>
+<br>
+〇バイナリ解析エディタ<br>
+Bz<br>
+<a href="http://www.zob.ne.jp/~c.mos/soft/bz.html" target=blank>http://www.zob.ne.jp/~c.mos/soft/bz.html</a><br>
+ooo<br>
+<a href="http://www.vector.co.jp/soft/win95/util/se137933.html" target=blank>http://www.vector.co.jp/soft/win95/util/se137933.html</a><br>
+ ２ファイル以上の差分を表示させてフォーマットヘッダの解析に使う<br>
+<br>
+〇プログラムエディタ<br>
+xyzzy<br>
+<a href="http://www.jsdlab.co.jp/~kamei/" target=blank>http://www.jsdlab.co.jp/~kamei/</a><br>
+TeraPad<br>
+<a href="http://www5f.biglobe.ne.jp/~t-susumu/" target=blank>http://www5f.biglobe.ne.jp/~t-susumu/</a><br>
+<br>
+〇etc<br>
+mp3info<br>
+<a href="http://win32lab.com/fsw/mp3infp/" target=blank>http://win32lab.com/fsw/mp3infp/</a><br>
+Cygwin<br>
+<a href="http://www.cygwin.com/" target=blank>http://www.cygwin.com/</a><br>
+<br>
+<br>
+〇ファイルフォーマット<br>
+[全般]<br />
+<a href="http://www.wotsit.org/" target=_blank>http://www.wotsit.org/</a><br />
+
+[Ogg]<br>
+<a href="http://www.xiph.org/ogg/vorbis/docs.html" target=blank>http://www.xiph.org/ogg/vorbis/docs.html</a><br>
+<a href="http://www.geocities.jp/aoyoume/aotuv/" target=_blank> aoTuV</a> aoTuV(crossdaysで使用っぽい) <br />
+[PNG]<br>
+<a href="http://www.club-e.co.jp/~ty/unix/png/sample.html" target=blank>http://www.club-e.co.jp/~ty/unix/png/sample.html</a><br>
+<a href="http://www.libpng.org/pub/png/libpng.html" target=blank>http://www.libpng.org/pub/png/libpng.html</a><br>
+<a href="http://www.libpng.org/pub/png/" target=blank>http://www.libpng.org/pub/png/</a><br>
+[WMV]<br>
+<a href="http://www.microsoft.com/windows/windowsmedia/format/asfspec.aspx" target=blank>http://www.microsoft.com/windows/windowsmedia/format/asfspec.aspx</a><br>
+<a href="http://www.microsoft.com/windows/windowsmedia/format/" target=blank>http://www.microsoft.com/windows/windowsmedia/format/</a><br>
+<a href="http://www.microsoft.com/japan/windows/windowsmedia/howto/articles/AddingSupport.aspx" target=_blank>http://www.microsoft.com/japan/windows/windowsmedia/howto/articles/AddingSupport.aspx</a><br />
+[RIFF/AVI]<br>
+[RIFF/WAV]<br>
+<br>
+
+〇IDE<br>
+SharpDevelop @ic#code<br>
+<a href="http://www.icsharpcode.net/OpenSource/SD/" target=blank>http://www.icsharpcode.net/OpenSource/SD/</a><br>
+
+<br>
+<hr>
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- ユーザー指定のファイルフォーマット抽出セット -->
+<!-- DTDも対応させる予定 -->
+<userset>
+  <attribute>
+    <name>MPEG-1 demo</name>
+    <kakutyoushi>.mpg</kakutyoushi>
+    <start>000001BA21000100</start>
+    <type>0</type>
+  </attribute>
+  <attribute>
+    <name>JPEG(JFIF) demo</name>
+    <kakutyoushi>.jpg</kakutyoushi>
+    <start>FFD8FFD0</start>
+    <!-- FFD9だと短すぎるのでENDは空がよい-->
+    <end>FFD9</end>
+    <type>0</type>
+  </attribute>
+  <attribute>
+    <name>EXE (demo)</name>
+    <kakutyoushi>.exe</kakutyoushi>
+    <start>4D5A900003000000</start>
+    <type>0</type>
+  </attribute>
+  <attribute>
+    <name>GIF (demo)</name>
+    <kakutyoushi>.gif</kakutyoushi>
+    <start>474946383961</start>
+    <type>0</type>
+  </attribute>
+</userset>

@@ -4,41 +4,47 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataCutter", "DataCutter.csproj", "{B352BC62-ECBD-4AA6-842D-D5E8A4478C81}"
+	ProjectSection(ProjectDependencies) = postProject
+		{95668414-E0A6-4987-9426-B77B5F8F1F0F} = {95668414-E0A6-4987-9426-B77B5F8F1F0F}
+		{427AF0C6-CE3B-49A0-85E8-575FDB37D075} = {427AF0C6-CE3B-49A0-85E8-575FDB37D075}
+	EndProjectSection
 	ProjectSection(WebsiteProperties) = preProject
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.Debug = "False"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataCutter_PlugIn", "..\DataCutter_PlugIn\DataCutter_PlugIn.csproj", "{427AF0C6-CE3B-49A0-85E8-575FDB37D075}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin_crossdays", "Plugin_crossdays\Plugin_crossdays.csproj", "{95668414-E0A6-4987-9426-B77B5F8F1F0F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{427AF0C6-CE3B-49A0-85E8-575FDB37D075} = {427AF0C6-CE3B-49A0-85E8-575FDB37D075}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin_crossdays", "..\Plugin_crossdays\Plugin_crossdays.csproj", "{95668414-E0A6-4987-9426-B77B5F8F1F0F}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataCutter_PlugIn", "DataCutter_PlugIn\DataCutter_PlugIn.csproj", "{427AF0C6-CE3B-49A0-85E8-575FDB37D075}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release_netArchive|Any CPU = Release_netArchive|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B352BC62-ECBD-4AA6-842D-D5E8A4478C81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B352BC62-ECBD-4AA6-842D-D5E8A4478C81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B352BC62-ECBD-4AA6-842D-D5E8A4478C81}.Release_netArchive|Any CPU.ActiveCfg = Release_netArchive|Any CPU
+		{B352BC62-ECBD-4AA6-842D-D5E8A4478C81}.Release_netArchive|Any CPU.Build.0 = Release_netArchive|Any CPU
 		{B352BC62-ECBD-4AA6-842D-D5E8A4478C81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B352BC62-ECBD-4AA6-842D-D5E8A4478C81}.Release|Any CPU.Build.0 = Release|Any CPU
-		{427AF0C6-CE3B-49A0-85E8-575FDB37D075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{427AF0C6-CE3B-49A0-85E8-575FDB37D075}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{427AF0C6-CE3B-49A0-85E8-575FDB37D075}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{427AF0C6-CE3B-49A0-85E8-575FDB37D075}.Release|Any CPU.Build.0 = Release|Any CPU
 		{95668414-E0A6-4987-9426-B77B5F8F1F0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{95668414-E0A6-4987-9426-B77B5F8F1F0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95668414-E0A6-4987-9426-B77B5F8F1F0F}.Release_netArchive|Any CPU.ActiveCfg = Release_netArchive|Any CPU
+		{95668414-E0A6-4987-9426-B77B5F8F1F0F}.Release_netArchive|Any CPU.Build.0 = Release_netArchive|Any CPU
 		{95668414-E0A6-4987-9426-B77B5F8F1F0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95668414-E0A6-4987-9426-B77B5F8F1F0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{427AF0C6-CE3B-49A0-85E8-575FDB37D075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{427AF0C6-CE3B-49A0-85E8-575FDB37D075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{427AF0C6-CE3B-49A0-85E8-575FDB37D075}.Release_netArchive|Any CPU.ActiveCfg = Release_netArchive|Any CPU
+		{427AF0C6-CE3B-49A0-85E8-575FDB37D075}.Release_netArchive|Any CPU.Build.0 = Release_netArchive|Any CPU
+		{427AF0C6-CE3B-49A0-85E8-575FDB37D075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{427AF0C6-CE3B-49A0-85E8-575FDB37D075}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
